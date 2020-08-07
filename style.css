@@ -212,4 +212,8 @@ body .section1:after{
     body {
         height: 100%;
     }
+    
+    body .section1 .heading1{
+        padding-left: 0;
+        padding-right: 0;
 }

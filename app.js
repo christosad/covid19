@@ -8,14 +8,17 @@
       const data = await response.json();
       console.log(data);
 
-      var Greece = data.Countries[65].Country;
-      var confirmed = data.Countries[65].NewConfirmed;
-      var confirmedCases = data.Countries[65].TotalConfirmed;
-      var newDeaths = data.Countries[65].NewDeaths;
-      var totalDeaths = data.Countries[65].TotalDeaths;
-      var newRecovered = data.Countries[65].NewRecovered;
-      var totalRecovered = data.Countries[65].TotalRecovered;
-      var day = data.Countries[65].Date;
+//var Greece = data.Countries[65].Country;
+      var Greece = data.Countries.find((item) => {
+        return item.Country === "Greece"
+      })
+      var confirmed = Greece.NewConfirmed;
+      var confirmedCases = Greece.TotalConfirmed;
+      var newDeaths = Greece.NewDeaths;
+      var totalDeaths = Greece.TotalDeaths;
+      var newRecovered = Greece.NewRecovered;
+      var totalRecovered = Greece.TotalRecovered;
+      var day = Greece.Date;
 
       document.getElementById('todaysDate').innerHTML = `( ` + day + ` )`;
       document.getElementById('sick').innerHTML = confirmed;
